@@ -6,13 +6,22 @@ const mongoose = require("mongoose");
 const postsRoutes = require("./routes/posts");
 const userRoutes = require("./routes/user");
 
+const web3 = require('web3');
+const Tx = require('ethereumjs-tx');
+
 const app = express();
+
+web3js = new web3(new web3.providers.HttpProvider("https://rinkeby.infura.io/v3/5d7be0f26d3b4f66a94ce7584df498fc"));
+var balance = web3js.eth.getBalance("0xD6aE8250b8348C94847280928c79fb3b63cA453e");
+balance = balance / 1e18;
+// balance = web3js.fromWei(balance, 'ether');
+console.log(balance);
 
 mongoose
   .connect(
     "mongodb+srv://patrick:" +
       process.env.MONGO_ATLAS_PW +
-      "@cluster0-vqoxf.mongodb.net/test?retryWrites=true&w=majority/test"
+      "@cluster0-vqoxf.mongodb.net/test"
   )
   .then(() => {
     console.log("Connected to database!");

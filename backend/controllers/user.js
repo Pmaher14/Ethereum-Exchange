@@ -4,6 +4,12 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
 exports.createUser = (req, res, next) => {
+  if (req.body.password != req.body.passwordConfirm) {
+    res.status(500).json({
+      message: "Passwords do not match."
+    });
+    return;
+  }
   bcrypt.hash(req.body.password, 10).then(hash => {
     const user = new User({
       email: req.body.email,
@@ -23,7 +29,7 @@ exports.createUser = (req, res, next) => {
         });
       });
   });
-}
+};
 
 exports.userLogin = (req, res, next) => {
   let fetchedUser;
@@ -59,4 +65,4 @@ exports.userLogin = (req, res, next) => {
         message: "Invalid authentication credentials!"
       });
     });
-}
+};
