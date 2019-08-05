@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <h3>Buy Ethereum</h3>
+  <form (submit)="onBuy(buyForm)" #buyForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput name="amount" ngModel placeholder="Amount" #amountInput="ngModel" required>
+      <mat-error *ngIf="amountInput.invalid">Please enter a valid amount.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Buy</button>
+  </form>
+</mat-card>

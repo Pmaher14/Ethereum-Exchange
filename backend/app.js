@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/user");
+const accountRoutes = require("./routes/account");
 
 const web3 = require('web3');
 const Tx = require('ethereumjs-tx');
@@ -47,5 +48,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/account", accountRoutes);
 
 module.exports = app;
