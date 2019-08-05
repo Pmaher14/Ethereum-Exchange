@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Create Account</h1>
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onCreateAccount()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="firstName"
+        placeholder="First Name"
+      />
+      <mat-error *ngIf="form.get('firstName').invalid"
+        >Please enter a first name.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="lastName"
+        placeholder="Last Name"
+      />
+      <mat-error *ngIf="form.get('lastName').invalid"
+        >Please enter a last name.</mat-error
+      >
+    </mat-form-field>
+    <button class="form-buttons" mat-raised-button color="accent" type="submit">
+      Save
+    </button>
+  </form>
+</mat-card>

@@ -1,6 +1,7 @@
 const Account = require("../models/account");
 
 exports.createAccount = (req, res, next) => {
+  console.log('Account Created');
   const account = new Account({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -52,12 +53,14 @@ exports.updateAccount = (req, res, next) => {
 };
 
 exports.getAccount = (req, res, next) => {
-  Account.findById(req.params.id)
+  Account.findOne({ creator: req.params.id })
     .then(account => {
       if (account) {
         res.status(200).json(account);
       } else {
-        res.status(404).json({ message: "Account not found!" });
+        account == null;
+        res.status(200).json(account);
+        // res.status(404).json({ message: "Account not found!" });
       }
     })
     .catch(error => {
