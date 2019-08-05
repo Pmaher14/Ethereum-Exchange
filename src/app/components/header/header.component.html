@@ -1,26 +1,28 @@
-<mat-toolbar color="primary">
-  <span>
-    <a routerLink="/">Ethereum 4 U</a>
-  </span>
-  <span class="spacer"></span>
-  <ul>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
-    </li>
-    <li *ngIf="userIsAuthenticated">
-      <button mat-button routerLink="/buy">Buy</button>
-    </li>
-    <li *ngIf="userIsAuthenticated">
-      <button mat-button routerLink="/lend">Lend</button>
-    </li>
-    <li *ngIf="userIsAuthenticated">
-      <button mat-button routerLink="/account">Account</button>
-    </li>
-    <li *ngIf="userIsAuthenticated">
-      <button mat-button (click)="onLogout()">Logout</button>
-    </li>
-  </ul>
-</mat-toolbar>
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" routerLink="/">Ethereum 4 U</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="!userIsAuthenticated">
+        <a class="nav-link" routerLink="/auth/login">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!userIsAuthenticated">
+        <a class="nav-link" routerLink="/auth/signup">Signup</a>
+      </li>
+      <li class="nav-item" *ngIf="userIsAuthenticated">
+        <a class="nav-link" routerLink="/buy">Buy</a>
+      </li>
+      <li class="nav-item" *ngIf="userIsAuthenticated">
+        <a class="nav-link" routerLink="/lend">Lend</a>
+      </li>
+      <li class="nav-item" *ngIf="userIsAuthenticated">
+        <a class="nav-link" routerLink="/account">Account</a>
+      </li>
+      <li class="nav-item" *ngIf="userIsAuthenticated">
+        <a class="nav-link logout" (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

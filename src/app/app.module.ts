@@ -6,12 +6,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./components/header/header.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthInterceptor } from "./auth/auth-interceptor";
 import { ErrorInterceptor } from "./error-interceptor";
 import { ErrorComponent } from "./error/error.component";
+
 import { AngularMaterialModule } from "./angular-material.module";
+
+import { HeaderComponent } from "./components/header/header.component";
 import { HomeComponent } from './pages/home/home.component';
 import { AccountComponent } from './pages/account/account.component';
 import { AccountCreateComponent } from "./pages/account/account-create/account-create.component";
