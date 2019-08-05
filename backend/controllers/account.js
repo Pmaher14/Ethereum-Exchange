@@ -5,6 +5,9 @@ exports.createAccount = (req, res, next) => {
   const account = new Account({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    phone: req.body.phone,
+    country: req.body.country,
+    state: req.body.state,
     balance: req.body.balance,
     creator: req.userData.userId
   });
@@ -31,6 +34,9 @@ exports.updateAccount = (req, res, next) => {
     _id: req.body.id,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    phone: req.body.phone,
+    country: req.body.country,
+    state: req.body.state,
     balance: req.body.balance,
     creator: req.userData.userId
   });

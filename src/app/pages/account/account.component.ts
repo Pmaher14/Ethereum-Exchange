@@ -19,6 +19,9 @@ export class AccountComponent implements OnInit {
   firstName = '';
   lastName = '';
   balance = '';
+  phone = '';
+  country = '';
+  state = '';
 
   private authStatusSub: Subscription;
   userIsAuthenticated = false;
@@ -49,6 +52,9 @@ export class AccountComponent implements OnInit {
       this.firstName = account.firstName;
       this.lastName = account.lastName;
       this.balance = account.balance;
+      this.phone = account.phone;
+      this.country = account.country;
+      this.state = account.state;
     });
 
   }

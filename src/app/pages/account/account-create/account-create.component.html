@@ -24,6 +24,39 @@
         >Please enter a last name.</mat-error
       >
     </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="phone"
+        placeholder="(000)-000-0000"
+      />
+      <mat-error *ngIf="form.get('phone').invalid"
+        >Please enter a phone number in the format (000)-000-0000.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="country"
+        placeholder="United States"
+      />
+      <mat-error *ngIf="form.get('country').invalid"
+        >Please enter a country.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="state"
+        placeholder="California"
+      />
+      <mat-error *ngIf="form.get('state').invalid"
+        >Please enter a state.</mat-error
+      >
+    </mat-form-field>
     <button class="form-buttons" mat-raised-button color="accent" type="submit">
       Save
     </button>

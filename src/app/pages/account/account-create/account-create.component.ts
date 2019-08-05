@@ -43,6 +43,15 @@ export class AccountCreateComponent implements OnInit {
       }),
       lastName: new FormControl(null, {
         validators: [Validators.required]
+      }),
+      phone: new FormControl(null, {
+        validators: [Validators.required]
+      }),
+      country: new FormControl(null, {
+        validators: [Validators.required]
+      }),
+      state: new FormControl(null, {
+        validators: [Validators.required]
       })
     });
   }
@@ -55,7 +64,10 @@ export class AccountCreateComponent implements OnInit {
     this.accountService
       .createAccount(
         this.form.value.firstName,
-        this.form.value.lastName
+        this.form.value.lastName,
+        this.form.value.phone,
+        this.form.value.country,
+        this.form.value.state
       ).subscribe(() => {
         this.router.navigate(['/account']);
       });

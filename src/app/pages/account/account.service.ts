@@ -17,16 +17,22 @@ export class AccountService {
       _id: string;
       firstName: string;
       lastName: string;
+      phone: string;
+      country: string;
+      state: string;
       balance: string;
       creator: string;
     }>(BACKEND_URL + id);
   }
 
-  createAccount(firstName: string, lastName: string) {
+  createAccount(firstName: string, lastName: string, phone: string, country: string, state: string) {
     const accountData: Account = {
       id: null,
       firstName: firstName,
       lastName: lastName,
+      phone: phone,
+      country: country,
+      state: state,
       balance: '0',
       creator: null
     };
