@@ -29,7 +29,7 @@
     "core-js": "^3.1.2",
     "eth-lightwallet": "^4.0.0",
     "ethereumjs-tx": "^2.1.0",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "hooked-web3-provider": "^1.0.0",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.1.2",
