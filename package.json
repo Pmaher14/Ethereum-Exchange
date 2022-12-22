@@ -31,7 +31,7 @@
     "ethereumjs-tx": "^2.1.0",
     "express": "^4.16.3",
     "hooked-web3-provider": "^1.0.0",
-    "jsonwebtoken": "^8.2.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.1.2",
     "mongoose-unique-validator": "^2.0.1",
     "multer": "^1.3.0",
